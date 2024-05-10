@@ -109,11 +109,13 @@ int main() {
     enqueueProcesses(queue, processes, sizeof(processes) / sizeof(Process));
 
     int end_time = 0;
+    printf("간트 차트:\n");
     while (queue->front != NULL) {
     int gant= dequeue(queue);
     printf("P%d (%d-%d)\n", processes[gant].id, end_time, end_time + processes[gant].exe);
     end_time += processes[gant].exe;
     }
+    printf("\n");
 
     enqueueProcesses(queue, processes, sizeof(processes) / sizeof(Process));
 
